@@ -1,0 +1,31 @@
+ <div class="row">
+    <h2 class="text-danger text-center">Master Detail using Component Communication</h2>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+    <mat-accordion class="example-headers-align" >
+        <mat-expansion-panel hideToggle disabled style="background-color: #343a40;">
+            <mat-expansion-panel-header>
+              <mat-panel-title style="color: white;">
+                ID
+              </mat-panel-title>
+              <mat-panel-description style="color: white;">
+                Purchaser Name
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          </mat-expansion-panel>
+        <mat-expansion-panel *ngFor="let p of Item" >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h2>{{p.P_Id}}</h2>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <h2 class="text-info">{{p.P_Title}}</h2>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-purchase-order [PurchaseItem]='p'></app-purchase-order>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+</div>
