@@ -3,24 +3,20 @@
  <div class="row">
    <div class="col md-2"></div>
    <div class="col-md-4">
-    <button (click)='showdbdemo()' class="btn btn-danger">Data Binding</button>
+    <button routerLink="/data-binding" class="btn btn-danger">Data Binding</button>
    </div>
    <div class="col-md-4">
-    <button (click)='showdirecyivedemo()' class="btn btn-warning">Products</button>
+    <button routerLink="/Product" class="btn btn-warning">Products</button>
    </div>
    <div class="col-md-3">
-    <button (click)='showPurchase()' class="btn btn-primary">Master Details</button>
+    <button routerLink="/MasterDetails" class="btn btn-primary">Master Details</button>
    </div>
    <div class="col-md-2"></div>
  </div>
  <hr/>
  <div class="row">
   <div class="col-md-12">
-  <app-tshirtdatabinding *ngIf='showDataBindingDemo'></app-tshirtdatabinding>
-  <app-product *ngIf='showDirectiveDemo'></app-product>
-  </div>
-  <div class="col-md-12">
-  <app-purchase *ngIf='showPurchaseDemo'></app-purchase>
+    <router-outlet></router-outlet>
   </div>
  </div>
 </div>

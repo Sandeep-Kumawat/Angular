@@ -25,4 +25,8 @@ changeTshirtMouseExit():void
 {
   this.imgSource = '../assets/front.jpg';
 }
+ er:any=undefined;
+ generateError(){
+   this.er.sort();
+ }
 }
