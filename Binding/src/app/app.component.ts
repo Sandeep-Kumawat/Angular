@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ 
   title = 'Angular Demo';
   showDataBindingDemo = true;
   showDirectiveDemo = false;
   showPurchaseDemo = false;
+  showDemoChild1=false;
+  showDemochild2=false;
   showdbdemo():void{
     this.showDataBindingDemo = true;
     this.showDirectiveDemo = false;
@@ -25,6 +28,13 @@ export class AppComponent {
     this.showDataBindingDemo = false;
     this.showDirectiveDemo = false;
     
+  }
+  showData():void{
+    this.showDemoChild1=true;
+    this.showDemochild2=true;
+    this.showDataBindingDemo = false;
+    this.showDirectiveDemo = false;
+    this.showPurchaseDemo = false;
   }
 
 }

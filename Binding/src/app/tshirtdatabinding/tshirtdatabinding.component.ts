@@ -11,7 +11,7 @@ export class TshirtdatabindingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title = "T-Shirts";
+  title = "T-Shirts Design";
 a = 300;
 b = 300;
 imgSource = '../assets/front.jpg';
@@ -25,8 +25,13 @@ changeTshirtMouseExit():void
 {
   this.imgSource = '../assets/front.jpg';
 }
- er:any=undefined;
- generateError(){
-   this.er.sort();
+ 
+ fun():void{
+   if(this.a <= 0){
+     this.a = 0;
+   }
+   if(this.b <= 0){
+    this.b = 0;
+  }
  }
 }

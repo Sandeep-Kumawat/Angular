@@ -1,4 +1,5 @@
 <div class="row">
+    <div class="col-md-12">
     <table class="table">
         <thead style="background-color: darkgray;">
             <tr>
@@ -42,4 +43,45 @@
             </tr>
         </tbody>
     </table>
+</div></div>
+<br/>
+<div class="row">
+    <div class="col-md-12">
+    <h1 style="background-color: darkgray;">Table using Angular Material</h1>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+    <table mat-table [dataSource]="products">
+        <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef style="background-color: darkgray;"> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+        </ng-container>
+
+            <ng-container matColumnDef="Title">
+                <th mat-header-cell *matHeaderCellDef style="background-color: darkgray;"> Title </th>
+                <td mat-cell *matCellDef="let element"> {{element.Title}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Price">
+                <th mat-header-cell *matHeaderCellDef style="background-color: darkgray;"> Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
+              </ng-container>
+              <ng-container matColumnDef="IsInStock">
+                <th mat-header-cell *matHeaderCellDef style="background-color: darkgray;"> IsInStock </th>
+                <td mat-cell *matCellDef="let element"> {{element.IsInStock}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+</div>
+<br/><br/>
+<div class="row">
+    <div class="col-md-12">
+        <footer>
+            <p style="color: blue;background-color:rgb(243, 230, 224)">In this demo we are using ngFor, ng-container, ngIf,ng-template for displaying all attribute of table and also showing material table
+            of angular using mat-table. </p>
+          </footer>
+    </div>
 </div>

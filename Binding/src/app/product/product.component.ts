@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
     this.products=this.pro.getProducts();
     //console.log(this.products);
   }
+  displayedColumns: string[] = ['Id', 'Title', 'Price', 'IsInStock'];
   // getProducts():IProduct[]
   // {
   //   return[
