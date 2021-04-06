@@ -1,3 +1,18 @@
+<br/>
+<div class="row">
+    <div class="col-md-4">
+    <h2>Filter Data By Title</h2>
+    <input type="text" [(ngModel)]='searchText' class="form-control" placeholder="Enter Product Name"/>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-4">
+    <h2>Filter Data By Price</h2>
+    <input type="text" [(ngModel)]='priceSearch' class="form-control" placeholder="Enter Product Name"/>
+    </div>
+</div>
+<br/>
 <div class="row">
     <div class="col-md-12">
     <table class="table">
@@ -24,7 +39,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let p of products">
+            <tr *ngFor="let p of products | productSearch:searchText | productPrice:priceSearch">
                 <td>{{p.Id}}</td>
                 <td>{{p.Title}}</td>
                 <td>{{p.Price | currency}}</td>

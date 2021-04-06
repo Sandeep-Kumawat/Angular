@@ -8,6 +8,8 @@ import {IProduct} from './IProduct';
 })
 export class ProductComponent implements OnInit {
 
+   searchText:string;
+   priceSearch:number; 
   products : IProduct[]=[];
   constructor(
     private pro:DataService

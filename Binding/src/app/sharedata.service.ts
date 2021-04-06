@@ -15,14 +15,20 @@ export class SharedataService {
     IsInStock:true,
     Quantity:5
   };
+  prod:IProduct;
   product$ : BehaviorSubject<IProduct>
   constructor() {
      this.product$= new BehaviorSubject(this.product);
    }
-   setPrice(price:number)
-   {
-     this.product.Price=price;
-     this.product$.next(this.product);
-   }
-  
+  //  setPrice(price:number)
+  //  {
+  //    this.product.Price=price;
+  //    this.product$.next(this.product);
+  //  }
+  updateProduct(p:IProduct){
+    this.prod={
+      ...p
+    }
+    this.product$.next(this.prod);
+  }
 }

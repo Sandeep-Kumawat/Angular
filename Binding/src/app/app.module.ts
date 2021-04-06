@@ -1,5 +1,5 @@
 import { ErrorHandler, NgModule } from '@angular/core';
-import { FormGroupName, FormsModule } from '@angular/forms';
+import { FormGroupName, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatTableModule} from '@angular/material/table';
 
@@ -22,6 +22,9 @@ import { ChangeColorDirective } from './change-color.directive';
 import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 import { HomeComponent } from './home/home.component';
 import { GlobalErrorComponent } from './global-error/global-error.component';
+import { LoginComponent } from './login/login.component';
+import { ProductSearchPipe } from './product-search.pipe';
+import { ProductPricePipe } from './product-price.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,10 @@ import { GlobalErrorComponent } from './global-error/global-error.component';
     ChangeColorDirective,
     DirectiveDemoComponent,
     HomeComponent,
-    GlobalErrorComponent
+    GlobalErrorComponent,
+    LoginComponent,
+    ProductSearchPipe,
+    ProductPricePipe
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,9 @@ import { GlobalErrorComponent } from './global-error/global-error.component';
     MatExpansionModule,
     RouterModule,
     AppRoutingModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
+
   ],
   providers: [{provide:ErrorHandler,useClass:MyErrorHandlerService},
                {provide:SharedataService,useClass:SharedataService}],

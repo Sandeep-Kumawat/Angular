@@ -1,4 +1,66 @@
-<h1 style="color: blue;">Component 1</h1>
+<!-- <h1 style="color: blue;">Component 1</h1>
 <input type="number" [(ngModel)]='data' placeholder="Enter Price" style="color:black;background-color:rgb(243, 230, 224)"/>
 <hr/>
-<button (click)='setPrice()' class="btn btn-primary">Send Data</button>
+<button (click)='setPrice()' class="btn btn-primary">Set Price</button> --> 
+
+<div class="container">
+    <h1 style="color: blue;">Component 1</h1>
+    <div class="row">
+    
+        <form (ngSubmit)='updateProduct()' [formGroup]='productEditForm ' novalidate class="form">
+            Id: <input formControlName='Id'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Id')?.hasError('required')&& productEditForm.get('Id')?.touched">
+                Id is Required
+            </div>
+            <br/>
+            Title: <input formControlName='Title'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Title')?.hasError('required')&& productEditForm.get('Title')?.touched">
+                Title is Required
+            </div>
+            <br/>
+            Price: <input formControlName='Price'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Price')?.dirty  && productEditForm?.get('Price')?.errors && productEditForm?.get('Price')?.errors?.priceRange ">
+                Price b/w {{min}} and {{max}}
+            </div>
+            <br/>
+            Quantity: <input formControlName='Quantity'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Quantity')?.hasError('required')&& productEditForm.get('Quantity')?.touched" >
+                Quantity is Required
+            </div>
+            <br/>
+            Expiry Date: <input formControlName='ExpiryDate'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('ExpiryData')?.hasError('required')&& productEditForm.get('ExpiryData')?.touched" >
+                ExpiryData is Required
+            </div>
+            <br/>
+            IsInStock: <input formControlName='IsInStock'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('IsInStock')?.hasError('required')&& productEditForm.get('IsInStock')?.touched" >
+            IsInStock is Required
+            </div>
+            <br/>
+            <button type="submit" [disabled]='productEditForm.invalid' class="btn btn-danger">Set Data</button>
+            <button type="button" (click)='cancel()' class="btn btn-info">Reset</button>
+        </form>
+
+    </div>
+
+</div>
+
