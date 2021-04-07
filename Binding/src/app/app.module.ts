@@ -65,7 +65,7 @@ import { AsyncComComponent } from './async-com/async-com.component';
     ReactiveFormsModule
 
   ],
-  providers: [{provide:ErrorHandler,useClass:ErrorHandler},
+  providers: [{provide:ErrorHandler,useClass:MyErrorHandlerService},
                {provide:SharedataService,useClass:SharedataService}],
   bootstrap: [AppComponent]
 })
