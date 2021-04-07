@@ -13,7 +13,16 @@
     </div>
 </div>
 <br/>
-<div class="row">
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" (click)='showHtmlTable()'>HTML Table</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)='showMaterialTable()'>Material Table</a>
+    </li>
+</ul>
+<hr>
+<div class="row" *ngIf="showHtmlbool">
     <div class="col-md-12">
     <table class="table">
         <thead style="background-color: darkgray;">
@@ -60,12 +69,13 @@
     </table>
 </div></div>
 <br/>
-<div class="row">
-    <div class="col-md-12">
-    <h1 style="background-color: darkgray;">Table using Angular Material</h1>
-</div>
-</div>
-<div class="row">
+
+<div class="row" *ngIf="showMaterialbool">
+    <div class="row" >
+        <div class="col-md-12">
+        <h1 style="background-color: darkgray;">Table using Angular Material</h1>
+    </div>
+    </div>
     <div class="col-md-12">
     <table mat-table [dataSource]="products">
         <ng-container matColumnDef="Id">

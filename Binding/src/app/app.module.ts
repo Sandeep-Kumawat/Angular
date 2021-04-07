@@ -25,6 +25,7 @@ import { GlobalErrorComponent } from './global-error/global-error.component';
 import { LoginComponent } from './login/login.component';
 import { ProductSearchPipe } from './product-search.pipe';
 import { ProductPricePipe } from './product-price.pipe';
+import { RxJsComponent } from './rx-js/rx-js.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { ProductPricePipe } from './product-price.pipe';
     GlobalErrorComponent,
     LoginComponent,
     ProductSearchPipe,
-    ProductPricePipe
+    ProductPricePipe,
+    RxJsComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,17 @@ export class ProductComponent implements OnInit {
     //console.log(this.products);
   }
   displayedColumns: string[] = ['Id', 'Title', 'Price', 'IsInStock'];
+
+  showHtmlbool = true;
+  showMaterialbool = false;
+  showHtmlTable(){
+    this.showHtmlbool = true;
+    this.showMaterialbool = false;
+  }
+  showMaterialTable(){
+    this.showMaterialbool = true;
+    this.showHtmlbool = false;
+  }
   // getProducts():IProduct[]
   // {
   //   return[

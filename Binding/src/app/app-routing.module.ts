@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { PurchaseComponent } from './purchase/purchase.component';
+import { RxJsComponent } from './rx-js/rx-js.component';
 import { ShareDataComponent } from './share-data/share-data.component';
 import { TshirtdatabindingComponent } from './tshirtdatabinding/tshirtdatabinding.component';
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
         {path:"directive", component:DirectiveDemoComponent},
         {path:"home", component:HomeComponent},
         {path:"errorHandler", component:GlobalErrorComponent},
-        {path:"login", component:LoginComponent}
+        {path:"login", component:LoginComponent},
+        {path:"rxjs", component:RxJsComponent}
 ];
 
 @NgModule({

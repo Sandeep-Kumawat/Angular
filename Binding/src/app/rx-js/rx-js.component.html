@@ -1,0 +1,147 @@
+<h2>{{title}}</h2>
+<div class="wrapper">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" (click)='showSubject()'>Subject</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)='showBehaviourSubject()'>Behaviour Subject</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)='showReplaySubject()'>Replay Subject</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)='showAsyncSubject()'>Async Subject</a>
+        </li>
+    </ul>
+    <br/>
+    <div class="row" *ngIf='showSubjectDemo'>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber1</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber2</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber3</button>
+        </div>
+    </div>
+    <div class="row" *ngIf='showBehaviourSubjectDemo'>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber1</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber2</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber3</button>
+        </div>
+    </div>
+    <div class="row" *ngIf='showReplaySubjectDemo'>
+        <div class="col-md-4">
+            <button class="btn btn-info" (click)='subscribe1()'>Subscriber1</button>
+            <div *ngFor="let p of observer1">
+            <p class="data1"> {{p}}</p>
+            </div>
+            <div *ngIf="showObserver1">
+            complete
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info" (click)='susbcribe2()'>Subscriber2</button>
+            <div *ngFor="let p of observer2">
+                <p class="data2"> {{p}}</p>
+                </div>
+                <div *ngIf="showObserver2">
+                complete
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info" (click)='susbcribe3()'>Subscriber3</button>
+            <div *ngFor="let p of observer3">
+                <p class="data3"> {{p}}</p>
+                </div>
+                <div *ngIf="showObserver3">
+                complete
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf='showAsyncSubjectDemo'>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber1</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber2</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-info">Subscriber3</button>
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+
+<!-- <div class="row" *ngIf="showSubject()">
+    <button>Subscriber1</button>
+   </div>
+   <div class="row" *ngIf="showBehaviourSubject()">
+       
+   </div>
+   <div class="row" *ngIf="showReplaySubject()">
+      
+   </div>
+   <div class="row" *ngIf="showAsyncSubject()">
+       
+   </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2>{{title}}</h2>
+
+<div class="wrapper">
+  <div>
+    <button (click)='subscribe1()'>Subscriber 1 </button>
+    <hr />
+    <div *ngFor="let p of observer1">
+      <p class="data1"> {{p}}</p>
+    </div>
+    <div *ngIf="showObserver1">
+      complete
+    </div>
+  </div>
+  <div>
+    <button (click)='susbcribe2()'>Subscriber 2 </button>
+    <hr />
+    <div *ngFor="let p of observer2">
+      <p class="data2"> {{p}}</p>
+    </div>
+    <div *ngIf="showObserver2">
+      complete
+    </div>
+  </div>
+  <div>
+    <button (click)='susbcribe3()'>Subscriber 3 </button>
+    <hr />
+    <div *ngFor="let p of observer3">
+      <p class="data3"> {{p}}</p>
+    </div>
+    <div *ngIf="showObserver3">
+      complete
+    </div>
+  </div>
+
+
+</div> -->
