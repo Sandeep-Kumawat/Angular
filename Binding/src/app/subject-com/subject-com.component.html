@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 style="color: blue;">{{title}}</h2>
+    <hr/>
+<div class="row">
+    <div class="col-md-4">
+        <button class="btn btn-info" (click)='subscribe1()'>Subscriber1</button>
+        <div *ngFor="let p of observer1">
+        <p class="data1"> {{p}}</p>
+        </div>
+        <div *ngIf="showObserver1">
+        complete
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-info" (click)='susbcribe2()'>Subscriber2</button>
+        <div *ngFor="let p of observer2">
+            <p class="data2"> {{p}}</p>
+            </div>
+            <div *ngIf="showObserver2">
+            complete
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-info" (click)='susbcribe3()'>Subscriber3</button>
+        <div *ngFor="let p of observer3">
+            <p class="data3"> {{p}}</p>
+            </div>
+            <div *ngIf="showObserver3">
+            complete
+        </div>
+    </div>
+</div>
+</div>
+
+

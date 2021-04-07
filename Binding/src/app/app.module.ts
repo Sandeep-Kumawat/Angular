@@ -26,6 +26,10 @@ import { LoginComponent } from './login/login.component';
 import { ProductSearchPipe } from './product-search.pipe';
 import { ProductPricePipe } from './product-price.pipe';
 import { RxJsComponent } from './rx-js/rx-js.component';
+import { SubjectComComponent } from './subject-com/subject-com.component';
+import { BehaviorComComponent } from './behavior-com/behavior-com.component';
+import { ReplayComComponent } from './replay-com/replay-com.component';
+import { AsyncComComponent } from './async-com/async-com.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,11 @@ import { RxJsComponent } from './rx-js/rx-js.component';
     LoginComponent,
     ProductSearchPipe,
     ProductPricePipe,
-    RxJsComponent
+    RxJsComponent,
+    SubjectComComponent,
+    BehaviorComComponent,
+    ReplayComComponent,
+    AsyncComComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +65,7 @@ import { RxJsComponent } from './rx-js/rx-js.component';
     ReactiveFormsModule
 
   ],
-  providers: [{provide:ErrorHandler,useClass:MyErrorHandlerService},
+  providers: [{provide:ErrorHandler,useClass:ErrorHandler},
                {provide:SharedataService,useClass:SharedataService}],
   bootstrap: [AppComponent]
 })
