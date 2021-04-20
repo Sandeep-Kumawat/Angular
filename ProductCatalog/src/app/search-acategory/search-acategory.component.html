@@ -1,0 +1,69 @@
+<br/>
+<h3 style="text-align: center;">Categoty Menu</h3>
+<br/>
+<div class="row">
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/AddCategory">Add Category</button>
+    </div>
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/ListofCategories">List Of All Category</button>
+    </div>
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/DeleteCategory">Delete A Category</button>
+    </div>
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/SearchCategory">Search A Category</button>
+     </div>
+ </div>
+ <br/>
+ <hr/>
+<div class="row">
+    <div class="col-md-4">
+    <h5>Filter Category By Category ID</h5>
+    <input type="number" [(ngModel)]='searchId' class="form-control" placeholder="Enter Category ID"/>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-4">
+    <h5>Filter Category By Category Name</h5>
+    <input type="text" [(ngModel)]='searchName' class="form-control" placeholder="Enter Category Name"/>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-4">
+    <h5>Filter Category By Short Code</h5>
+    <input type="text" [(ngModel)]='searchShortCode' class="form-control" placeholder="Enter Short Code"/>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-12">
+    <table class="table">
+        <thead style="background-color: darkgray;">
+            <tr>
+                <th>
+                    Category ID
+                </th>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Short Code
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of categories | categoryId:searchId | categoryName:searchName | shortCode:searchShortCode">
+                <td>{{c.CategoryId}}</td>
+                <td>{{c.CategoryName}}</td>
+                <td>{{c.ShortCode}}</td>
+                <td>{{c.Description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div></div>

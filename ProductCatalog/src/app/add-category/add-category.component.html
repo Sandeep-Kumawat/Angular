@@ -1,0 +1,64 @@
+<br/>
+<h3 style="text-align: center;">Categoty Menu</h3>
+<br/>
+<div class="row">
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/AddCategory">Add Category</button>
+    </div>
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/ListofCategories">List Of All Category</button>
+    </div>
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/DeleteCategory">Delete A Category</button>
+    </div>
+    <div class="col-md-3">
+     <button class="btn btn-primary" routerLink="/SearchCategory">Search A Category</button>
+     </div>
+ </div>
+ <br/>
+ <hr/>
+<div class="container" style="text-align: center;">
+    <h4 style="color: blue;">Add New Category</h4>
+    <br/>
+    <div class="row">
+    <div class="col-md-5"></div>
+        <form  [formGroup]='categoryAddForm ' novalidate class="form">
+            Category Id: <input formControlName='CategoryId'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="categoryAddForm?.get('CategoryId')?.hasError('required')&& categoryAddForm.get('CategoryId')?.touched">
+                CategoryId is Required
+            </div>
+            <br/>
+            Category Name: <input formControlName='CategoryName'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="categoryAddForm?.get('CategoryName')?.hasError('required')&& categoryAddForm.get('CategoryName')?.touched">
+                CategoryName is Required
+            </div>
+            <br/>
+            Short Code: <input formControlName='ShortCode'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="categoryAddForm?.get('ShortCode')?.hasError('required')&& categoryAddForm.get('ShortCode')?.touched" >
+                ShortCode is Required
+            </div>
+            <br/>
+            Description: <input formControlName='Description'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="categoryAddForm?.get('Description')?.hasError('required')&& categoryAddForm.get('Description')?.touched" >
+                Description is Required
+            </div>
+            <br/>
+            <button type="button" (click)='sendData()' [disabled]='categoryAddForm.invalid' class="btn btn-danger">Add Category</button>
+            <button type="button" (click)='cancel()' class="btn btn-info">Reset</button>
+        </form>
+
+    </div>
+
+</div>

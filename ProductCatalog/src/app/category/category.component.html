@@ -1,0 +1,49 @@
+<h1 style="text-align: center;">Categoty Menu</h1>
+<hr/>
+<h4 style="text-align: center;color: blue;">Please Select any Option</h4>
+<hr/>
+<div class="row">
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/AddCategory">Add Category</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/ListofCategories">List Of All Category</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/DeleteCategory">Delete A Category</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/SearchCategory">Search A Category</button>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-12">
+    <table class="table">
+        <thead style="background-color: darkgray;">
+            <tr>
+                <th>
+                    Category ID
+                </th>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Short Code
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of categories">
+                <td>{{c.CategoryId}}</td>
+                <td>{{c.CategoryName}}</td>
+                <td>{{c.ShortCode}}</td>
+                <td>{{c.Description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div></div>
+

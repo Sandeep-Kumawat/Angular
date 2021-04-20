@@ -1,0 +1,63 @@
+<br/>
+<h3 style="text-align: center;">Product Menu</h3>
+<hr/>
+<div class="row">
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/AddProduct">Add Product</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/ListofProducts">List Of All Produts</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/DeleteProduct">Delete A Product</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/SearchProduct">Search A Product</button>
+   </div>
+</div>
+<hr/>
+<h5 style="color: blue;">List of All Products</h5>
+<hr/>
+<div class="row">
+    <div class="col-md-12">
+    <table class="table">
+        <thead style="background-color: darkgray;">
+            <tr>
+                <th>
+                    Product ID
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Short Code
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Manufacturer
+                </th>
+                <th>
+                  Selling Price
+                </th>
+               <th>
+                    Product Category
+               </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.ProductID}}</td>
+                <td>{{p.ProductName}}</td>
+                <td>{{p.ProductShortCode}}</td>
+                <td>{{p.ProductDescription}}</td>
+                <td>{{p.Manufacturer}}</td>
+                <td>{{p.ProductPrice}}</td>
+                <td>{{p.ProductCategory}}</td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+</div>
+

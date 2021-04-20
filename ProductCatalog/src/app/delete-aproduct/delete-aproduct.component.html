@@ -1,0 +1,47 @@
+<br/>
+<h3 style="text-align: center;">Product Menu</h3>
+<hr/>
+<div class="row">
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/AddProduct">Add Product</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/ListofProducts">List Of All Produts</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/DeleteProduct">Delete A Product</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/SearchProduct">Search A Product</button>
+   </div>
+</div>
+<hr/>
+<div class="container">
+    <h4 style="color: blue;">Delete A Product</h4>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+            
+            Product ID : <input formControlName='ProductID' [(ngModel)]='proId'
+                type="number"
+                class="form-control" placeholder="Enter Product Id"
+                />
+                <br/>
+                <button type="button" (click)='deleteById()'  class="btn btn-danger">Delete Product</button>
+               
+
+        </div>
+        <div class="col-md-6">
+            
+                Product Short Code: <input formControlName='ProductShortCode' [(ngModel)]='proShortCode'
+                type="text"
+                class="form-control" placeholder="Enter Product Short Code"
+                />
+              
+                <br/>
+                <button type="button" (click)='deleteByShortCode()'  class="btn btn-danger">Delete Product</button>
+               
+          
+        </div>
+    </div>
+</div>

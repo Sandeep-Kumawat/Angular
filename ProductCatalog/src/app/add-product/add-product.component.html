@@ -1,0 +1,88 @@
+<br/>
+<h3 style="text-align: center;">Product Menu</h3>
+<hr/>
+<div class="row">
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/AddProduct">Add Product</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/ListofProducts">List Of All Produts</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/DeleteProduct">Delete A Product</button>
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-primary" routerLink="/SearchProduct">Search A Product</button>
+   </div>
+</div>
+<hr/>
+<div class="container" style="text-align: center;">
+    <h4 style="color: blue;">Add New Product</h4>
+    <br/>
+    <div class="row">
+    <div class="col-md-5"></div>
+        <form  [formGroup]='productAddForm ' novalidate class="form">
+            Product ID: <input formControlName='ProductID'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductID')?.hasError('required')&& productAddForm.get('ProductID')?.touched">
+                Product ID is Required
+            </div>
+            <br/>
+            Category Name: <input formControlName='ProductName'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductName')?.hasError('required')&& productAddForm.get('ProductName')?.touched">
+                Product Name is Required
+            </div>
+            <br/>
+            Short Code: <input formControlName='ProductShortCode'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductShortCode')?.hasError('required')&& productAddForm.get('ProductShortCode')?.touched" >
+                Short Code is Required
+            </div>
+            <br/>
+            Description: <input formControlName='ProductDescription'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductDescription')?.hasError('required')&& productAddForm.get('ProductDescription')?.touched" >
+                Description is Required
+            </div>
+            <br/>
+            Price: <input formControlName='ProductPrice'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductPrice')?.hasError('required')&& productAddForm.get('ProductPrice')?.touched" >
+                Price is Required
+            </div>
+            <br/>
+            Product Category: <input formControlName='ProductCategory'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductCategory')?.hasError('required')&& productAddForm.get('ProductCategory')?.touched" >
+                Product Category is Required
+            </div>
+            <br/>
+            Manufacturer: <input formControlName='Manufacturer'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('Manufacturer')?.hasError('required')&& productAddForm.get('Manufacturer')?.touched" >
+                Manufacturer is Required
+            </div>
+            <br/>
+            
+            <button type="button" (click)='sendData()' [disabled]='productAddForm.invalid' class="btn btn-danger">Add Category</button>
+            <button type="button" (click)='cancel()' class="btn btn-info">Reset</button>
+        </form>
+
+    </div>
+
+</div>
