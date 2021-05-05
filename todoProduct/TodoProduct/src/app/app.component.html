@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row bg-dark justify-content-center
+          align-items-center" style="height:80px">
+      <div class="col-3"></div>
+      <div class="col-3 text-light h2">
+        To do List Demo
+      </div>
+      
+      <div class="col-2 text-light h4">Hello Sandeep</div>
+  </div>
+ <br/>
+  
+  <div class="row mt-1" style="height:80px;">
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+      <div class="col-12 col-md-6 bg-info d-flex 
+                  justify-content-center align-items-center 
+                  text-light h3">
+ 
+          <input type="text" 
+                  value="" class="col-7 form-control"
+                      style="width:300px;">
+ 
+          <div class="col-1"></div>
+ 
+          <button 
+              class="btn btn-light text-info">
+              <b>ADD </b>
+          </button>
+      </div>
+ 
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+ <br/>
+  
+  <div *ngFor="let x of todoitems;" 
+          class="row mt-1" style="height:100px;">
+ 
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+ 
+      <div class="col-12 col-md-6 bg-info d-flex
+                  justify-content-center align-items-center
+                  text-light h3">
+ 
+          <div class="col-9 text-light h4">{{x.name}}</div>
+          <ng-container *ngIf="x.isComplete; then done else pending">
+          </ng-container>
+           
+          <ng-template #done>
+              <button class ="btn btn-success">Complete</button>
+              
+           </ng-template>
+    
+           <ng-template #pending>
+              
+              <button class = "btn btn-danger">PENDING</button>
+            </ng-template>
+          <!-- <input type="button"
+              value="Delete" class="col-2 btn btn-danger"> -->
+      </div>
+        
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+</div>
+
+
+<!-- 
+<br/>
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+  
+  <h1>Product Catalog</h1><br/>
+  <input type="text">
+  <button class="btn btn-primary">Add</button><br/>
+  <br/>
+  <table class="table">
+    <thead style="background-color: darkgray;">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Is Complete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of todoitems">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.isComplete}}</td> 
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="col-md-3">
+</div>
+</div> -->
