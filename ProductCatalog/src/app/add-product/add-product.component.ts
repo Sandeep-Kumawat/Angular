@@ -30,8 +30,7 @@ export class AddProductComponent implements OnInit {
     this.productData.addProduct(this.productAddForm.value);
     alert("Product Add Successfully");
     this.cancel();
-   
-    
+      
   }
   cancel(){
     this.productAddForm.reset();

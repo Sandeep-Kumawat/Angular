@@ -42,7 +42,7 @@
             type="text"
             class="form-control"
             />
-            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductShortCode')?.hasError('required')&& productAddForm.get('ProductShortCode')?.touched" >
+            <div class="alert alert-danger" *ngIf="productAddForm?.get('ProductShortCode')?.hasError('required')&& productAddForm.get('ProductShortCode')?.touched." >
                 Short Code is Required
             </div>
             <br/>
